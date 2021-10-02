@@ -48,9 +48,17 @@ export default new Vuex.Store({
     },
   },
   mutations: {
+    // state를 변화
     addUsers: (state, payload) => {
       state.allUsers.push(payload);
     },
   },
-  actions: {},
+  actions: {
+    // state를 변화시키기 위한 비즈니스 로직 (비동기 방식으로 서버와 통신(중복 검사, 비밀번호 검사))
+    addUsers: ({ commit }, payload) => {
+      // context, payload
+      // { commit }, payload
+      commit("addUsers", payload);
+    },
+  },
 });
