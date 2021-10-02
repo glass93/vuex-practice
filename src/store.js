@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    // data
+    // data 역할
     allUsers: [
       {
         userId: "hoza123",
@@ -29,6 +29,12 @@ export default new Vuex.Store({
         src: "https://goo.gl/x7SpCD",
       },
     ],
+  },
+  getters: {
+    // computed 역할 (state를 명시해줘야함)
+    allUsersCount: function(state) {
+      return state.allUsers.length;
+    },
   },
   mutations: {},
   actions: {},
